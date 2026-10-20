@@ -8,7 +8,7 @@ from fastapi.openapi.utils import get_openapi
 
 app = FastAPI(title="Birds Canopy Backend")
 
-# Allow local frontend development servers to access the backend
+# Allow local frontend development servers
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -30,6 +30,8 @@ ALLOWED_FORMATS = {
     ".wav", ".mp3", ".ogg", ".flac", ".m4a", ".aac"
 }
 
+MAX_FILE_SIZE = 100 * 1024 * 1024  # 100 MB
+
 
 @app.get("/")
 def home():
@@ -46,7 +48,7 @@ async def predict(file: UploadFile = File(...)):
     if not file.filename:
         raise HTTPException(
             status_code=400,
-            detail="No file selected"
+            detail="No file selected."
         )
 
     extension = Path(file.filename).suffix.lower()
@@ -54,11 +56,15 @@ async def predict(file: UploadFile = File(...)):
     if extension not in ALLOWED_FORMATS:
         raise HTTPException(
             status_code=400,
-            detail="Unsupported audio format"
+            detail=(
+                "Unsupported audio format. "
+                "Upload WAV, MP3, OGG, FLAC, M4A, or AAC."
+            )
         )
 
     filename = f"{uuid4().hex}{extension}"
     filepath = UPLOAD_DIR / filename
+    total_size = 0
 
     try:
         with filepath.open("wb") as output:
@@ -68,19 +74,40 @@ async def predict(file: UploadFile = File(...)):
                 if not chunk:
                     break
 
+                total_size += len(chunk)
+
+                if total_size > MAX_FILE_SIZE:
+                    raise HTTPException(
+                        status_code=413,
+                        detail=(
+                            "Audio file is too large. "
+                            "Maximum size is 100 MB."
+                        )
+                    )
+
                 output.write(chunk)
+
+        if total_size == 0:
+            raise HTTPException(
+                status_code=400,
+                detail="The uploaded audio file is empty."
+            )
+
+    except HTTPException:
+        filepath.unlink(missing_ok=True)
+        raise
 
     except OSError:
         filepath.unlink(missing_ok=True)
         raise HTTPException(
             status_code=500,
-            detail="Could not save the uploaded audio"
+            detail="Could not save the uploaded audio."
         )
 
     finally:
         await file.close()
 
-    # Temporary response until the actual ML model is integrated
+    # Temporary response until ML and MongoDB are integrated
     return {
         "success": True,
         "species": None,
@@ -88,7 +115,10 @@ async def predict(file: UploadFile = File(...)):
         "habitat": None,
         "conservation_status": None,
         "filename": filename,
-        "message": "Audio uploaded successfully. Model integration pending."
+        "message": (
+            "Audio uploaded successfully. "
+            "Model integration pending."
+        )
     }
 
 
