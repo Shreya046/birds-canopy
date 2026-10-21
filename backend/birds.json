@@ -1,0 +1,742 @@
+{
+  "Ashy_prinia": {
+    "scientific_name": "Prinia socialis",
+    "iucn_status": "Least Concern",
+    "habitat": "Scrub, grassland, farmland edges and gardens",
+    "vegetation": "Grasses, shrubs and scattered bushes",
+    "western_ghats_distribution": "Widespread across the Indian subcontinent, including suitable Western Ghats habitats",
+    "diet": "Insects and other small invertebrates",
+    "beak_description": "Short, slender insect-catching bill",
+    "distinctive_features": [
+      "Ash-grey upperparts",
+      "Long graduated tail",
+      "Often flicks its tail while moving"
+    ],
+    "biodiversity_role": "Consumes insects and forms part of the food web",
+    "major_threats": [
+      "Habitat degradation",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "It often builds its nest low in grasses or shrubs."
+  },
+  "Asian_koel": {
+    "scientific_name": "Eudynamys scolopaceus",
+    "iucn_status": "Least Concern",
+    "habitat": "Woodland, plantations, gardens and urban tree cover",
+    "vegetation": "Tree-rich habitats with fruiting trees",
+    "western_ghats_distribution": "Common in many parts of India, including the Western Ghats",
+    "diet": "Fruits and berries; sometimes insects and other small animals",
+    "beak_description": "Pale, slightly curved bill",
+    "distinctive_features": [
+      "Male is glossy black with red eyes",
+      "Female is brown and white-spotted",
+      "Loud, familiar calling song"
+    ],
+    "biodiversity_role": "Disperses seeds by eating fruit",
+    "major_threats": [
+      "Loss of tree cover",
+      "Pesticide exposure reducing food"
+    ],
+    "interesting_fact": "It is a brood parasite and lays eggs in the nests of other birds, especially crows."
+  },
+  "Asian_palm_swift": {
+    "scientific_name": "Cypsiurus balasiensis",
+    "iucn_status": "Least Concern",
+    "habitat": "Open country, villages, towns and areas with palm trees",
+    "vegetation": "Open landscapes with palms and scattered trees",
+    "western_ghats_distribution": "Widely distributed in India, including the Western Ghats region",
+    "diet": "Flying insects",
+    "beak_description": "Tiny bill and very wide gape",
+    "distinctive_features": [
+      "Slender body",
+      "Long, scythe-shaped wings",
+      "Deeply forked tail"
+    ],
+    "biodiversity_role": "Consumes flying insects",
+    "major_threats": [
+      "Loss of nesting palms",
+      "Decline in insect abundance"
+    ],
+    "interesting_fact": "It often builds its tiny nest on the underside of a palm frond."
+  },
+  "Black_drongo": {
+    "scientific_name": "Dicrurus macrocercus",
+    "iucn_status": "Least Concern",
+    "habitat": "Open farmland, grassland, scrub and forest edges",
+    "vegetation": "Open habitats with scattered trees or perches",
+    "western_ghats_distribution": "Widespread across India, including lowlands around the Western Ghats",
+    "diet": "Insects and other small invertebrates",
+    "beak_description": "Short, strong, hooked bill",
+    "distinctive_features": [
+      "Glossy black plumage",
+      "Distinctly forked tail",
+      "Bold, aggressive behaviour around larger birds"
+    ],
+    "biodiversity_role": "Controls insect populations and may alert other birds to predators",
+    "major_threats": [
+      "Loss of open foraging habitat",
+      "Pesticide use"
+    ],
+    "interesting_fact": "It often chases much larger birds away from its territory."
+  },
+  "Black_hooded_oriole": {
+    "scientific_name": "Oriolus xanthornus",
+    "iucn_status": "Least Concern",
+    "habitat": "Woodland, plantations, gardens and forest edges",
+    "vegetation": "Broad-leaved trees and mixed tree cover",
+    "western_ghats_distribution": "Occurs across much of India, including parts of the Western Ghats",
+    "diet": "Fruits, caterpillars and other insects",
+    "beak_description": "Pinkish, slightly curved bill",
+    "distinctive_features": [
+      "Bright yellow body",
+      "Black hood and throat",
+      "Red bill"
+    ],
+    "biodiversity_role": "Disperses seeds and consumes insects",
+    "major_threats": [
+      "Loss of mature trees",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "Its hanging, cup-shaped nest is suspended from a fork in a tree branch."
+  },
+  "Black_kite": {
+    "scientific_name": "Milvus migrans",
+    "iucn_status": "Least Concern",
+    "habitat": "Cities, farmland, wetlands and open woodland",
+    "vegetation": "Varied landscapes with trees and open feeding areas",
+    "western_ghats_distribution": "Widespread in India, including settlements and open areas near the Western Ghats",
+    "diet": "Carrion, scraps and small animals",
+    "beak_description": "Strong hooked raptor bill",
+    "distinctive_features": [
+      "Long wings",
+      "Forked tail",
+      "Soars for long periods"
+    ],
+    "biodiversity_role": "Scavenges carrion and helps remove organic waste",
+    "major_threats": [
+      "Poisoning from contaminated food",
+      "Electrocution and collisions"
+    ],
+    "interesting_fact": "It can use rising warm air to soar while expending little energy."
+  },
+  "Black_rumped_flameback": {
+    "scientific_name": "Dinopium benghalense",
+    "iucn_status": "Least Concern",
+    "habitat": "Woodland, gardens, plantations and open forest",
+    "vegetation": "Tree-rich habitats with trunks suitable for foraging",
+    "western_ghats_distribution": "Widespread in much of India, including the Western Ghats region",
+    "diet": "Ants, termites, beetle larvae and other insects",
+    "beak_description": "Chisel-like bill",
+    "distinctive_features": [
+      "Golden-yellow back",
+      "Black rump",
+      "Woodpecker-like stiff tail"
+    ],
+    "biodiversity_role": "Controls wood-boring insects and excavates tree cavities used by wildlife",
+    "major_threats": [
+      "Loss of mature trees",
+      "Removal of dead wood"
+    ],
+    "interesting_fact": "Its stiff tail helps support it while climbing tree trunks."
+  },
+  "Blue_tailed_bee_eater": {
+    "scientific_name": "Merops philippinus",
+    "iucn_status": "Least Concern",
+    "habitat": "Open country, wetlands, riverbanks and cultivated areas",
+    "vegetation": "Open landscapes near water or exposed nesting banks",
+    "western_ghats_distribution": "Occurs in parts of India; local presence in the Western Ghats varies seasonally",
+    "diet": "Bees, wasps, dragonflies and other flying insects",
+    "beak_description": "Long, slender, slightly curved bill",
+    "distinctive_features": [
+      "Green body",
+      "Blue tail streamers",
+      "Dark eye stripe"
+    ],
+    "biodiversity_role": "Controls flying insect populations",
+    "major_threats": [
+      "Loss of nesting banks",
+      "Pesticide use and insect decline"
+    ],
+    "interesting_fact": "It can catch flying insects in the air and often removes a stinger before swallowing a bee."
+  },
+  "Bronzed_drongo": {
+    "scientific_name": "Dicrurus aeneus",
+    "iucn_status": "Least Concern",
+    "habitat": "Moist forest, evergreen forest and shaded forest edges",
+    "vegetation": "Dense tropical forest canopy and mid-storey",
+    "western_ghats_distribution": "Found in forested parts of the Indian subcontinent, including the Western Ghats",
+    "diet": "Insects and other small arthropods",
+    "beak_description": "Short, strong bill with a slight hook",
+    "distinctive_features": [
+      "Glossy bronzy-black plumage",
+      "Forked tail",
+      "Often forages in forest canopy"
+    ],
+    "biodiversity_role": "Controls insect populations",
+    "major_threats": [
+      "Forest loss and fragmentation",
+      "Decline in insect prey"
+    ],
+    "interesting_fact": "Its dark plumage can show a metallic bronze sheen in good light."
+  },
+  "Common_kingfisher": {
+    "scientific_name": "Alcedo atthis",
+    "iucn_status": "Least Concern",
+    "habitat": "Streams, ponds, lakes, canals and other clear waters",
+    "vegetation": "Aquatic habitats with banks or perches",
+    "western_ghats_distribution": "Occurs across India, including suitable water bodies in the Western Ghats",
+    "diet": "Small fish, aquatic insects and other small aquatic animals",
+    "beak_description": "Long, pointed, spear-like bill",
+    "distinctive_features": [
+      "Small compact body",
+      "Bright blue upperparts",
+      "Orange underparts"
+    ],
+    "biodiversity_role": "Helps indicate aquatic food-web conditions and consumes small aquatic animals",
+    "major_threats": [
+      "Water pollution",
+      "Loss of clean bankside habitat"
+    ],
+    "interesting_fact": "It often dives from a perch to catch prey underwater."
+  },
+  "Common_tailorbird": {
+    "scientific_name": "Orthotomus sutorius",
+    "iucn_status": "Least Concern",
+    "habitat": "Gardens, scrub, plantations and forest edges",
+    "vegetation": "Shrubs, herbs and leafy garden vegetation",
+    "western_ghats_distribution": "Widespread across India, including the Western Ghats",
+    "diet": "Insects and small invertebrates",
+    "beak_description": "Short, slender bill",
+    "distinctive_features": [
+      "Olive-green upperparts",
+      "Rufous forehead",
+      "Long tail often held upright"
+    ],
+    "biodiversity_role": "Consumes insects and supports local food webs",
+    "major_threats": [
+      "Pesticide exposure",
+      "Loss of dense shrubs"
+    ],
+    "interesting_fact": "It stitches leaves together with plant fibres or spider silk to form its nest."
+  },
+  "Greater_coucal": {
+    "scientific_name": "Centropus sinensis",
+    "iucn_status": "Least Concern",
+    "habitat": "Scrub, grassland, wetlands edges, plantations and gardens",
+    "vegetation": "Dense grasses, bushes and undergrowth",
+    "western_ghats_distribution": "Widespread across India, including the Western Ghats",
+    "diet": "Insects, snails, small reptiles, eggs and other small animals",
+    "beak_description": "Strong, slightly curved bill",
+    "distinctive_features": [
+      "Black head and body",
+      "Chestnut wings",
+      "Long graduated tail"
+    ],
+    "biodiversity_role": "Consumes insects and small animals, helping regulate their populations",
+    "major_threats": [
+      "Wetland and scrub loss",
+      "Road mortality"
+    ],
+    "interesting_fact": "Despite its size, it often moves quietly through dense vegetation."
+  },
+  "Indian_peafowl": {
+    "scientific_name": "Pavo cristatus",
+    "iucn_status": "Least Concern",
+    "habitat": "Open forest, scrub, farmland and village edges",
+    "vegetation": "Scrub, grassland and mixed woodland",
+    "western_ghats_distribution": "Widespread across India, including the Western Ghats foothills and adjoining landscapes",
+    "diet": "Seeds, grains, fruits, insects and small animals",
+    "beak_description": "Short, strong bill",
+    "distinctive_features": [
+      "Male has an iridescent train with eye-spots",
+      "Bare blue head and neck",
+      "Loud, distinctive calls"
+    ],
+    "biodiversity_role": "Eats a varied diet including insects and helps disperse some seeds",
+    "major_threats": [
+      "Habitat change and disturbance",
+      "Road collisions"
+    ],
+    "interesting_fact": "The male's display train consists of elongated upper-tail coverts, not the true tail feathers."
+  },
+  "Indian_robin": {
+    "scientific_name": "Copsychus fulicatus",
+    "iucn_status": "Least Concern",
+    "habitat": "Dry scrub, rocky ground, open woodland and settlements",
+    "vegetation": "Open, dry landscapes with rocks and low shrubs",
+    "western_ghats_distribution": "Common in many parts of India; occurs in suitable drier areas around the Western Ghats",
+    "diet": "Insects and other small invertebrates",
+    "beak_description": "Slim pointed bill",
+    "distinctive_features": [
+      "Male is mostly dark with chestnut vent",
+      "Often holds its tail upright",
+      "Frequently forages on the ground"
+    ],
+    "biodiversity_role": "Consumes insects and other invertebrates",
+    "major_threats": [
+      "Loss of open scrub habitat",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "It often flicks its tail while searching for prey on the ground."
+  },
+  "Jerdons_nightjar": {
+    "scientific_name": "Caprimulgus atripennis",
+    "iucn_status": "Least Concern",
+    "habitat": "Open forest, scrub, rocky ground and dry woodland",
+    "vegetation": "Dry scrub and open woodland with ground cover",
+    "western_ghats_distribution": "Occurs in peninsular India, including suitable parts of the Western Ghats region",
+    "diet": "Moths, beetles and other nocturnal flying insects",
+    "beak_description": "Very small bill with a wide gape",
+    "distinctive_features": [
+      "Mottled camouflage plumage",
+      "Large eyes",
+      "Active mainly at dusk and night"
+    ],
+    "biodiversity_role": "Controls nocturnal insect populations",
+    "major_threats": [
+      "Loss of open scrub habitat",
+      "Disturbance and vehicle collisions"
+    ],
+    "interesting_fact": "Its cryptic plumage helps it remain difficult to see while resting on the ground."
+  },
+  "Jungle_babbler": {
+    "scientific_name": "Argya striata",
+    "iucn_status": "Least Concern",
+    "habitat": "Scrub, woodland, gardens and agricultural edges",
+    "vegetation": "Bushes, small trees and undergrowth",
+    "western_ghats_distribution": "Widespread in India, including the Western Ghats region",
+    "diet": "Insects, fruit, seeds and other small food items",
+    "beak_description": "Short, stout bill",
+    "distinctive_features": [
+      "Brown-grey plumage",
+      "Pale eyes",
+      "Usually travels in noisy groups"
+    ],
+    "biodiversity_role": "Consumes insects and helps disperse some seeds",
+    "major_threats": [
+      "Habitat degradation",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "Its social groups have earned it the nickname 'seven sisters' in parts of India."
+  },
+  "Lotens_sunbird": {
+    "scientific_name": "Cinnyris lotenius",
+    "iucn_status": "Least Concern",
+    "habitat": "Gardens, scrub, plantations and forest edges",
+    "vegetation": "Flowering shrubs and trees",
+    "western_ghats_distribution": "Endemic to peninsular India and found in parts of the Western Ghats",
+    "diet": "Nectar and small insects",
+    "beak_description": "Long, slender, down-curved bill",
+    "distinctive_features": [
+      "Male has iridescent dark plumage",
+      "Long curved bill",
+      "Often visits flowering plants"
+    ],
+    "biodiversity_role": "Pollinates flowers while feeding on nectar",
+    "major_threats": [
+      "Loss of flowering vegetation",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "It is a sunbird of peninsular India and is often seen visiting garden flowers."
+  },
+  "Malabar_grey_hornbill": {
+    "scientific_name": "Ocyceros griseus",
+    "iucn_status": "Vulnerable",
+    "habitat": "Moist evergreen and moist deciduous forests",
+    "vegetation": "Mature tropical forest with fruiting trees",
+    "western_ghats_distribution": "Endemic to the Western Ghats of southwestern India",
+    "diet": "Primarily fruits, also some insects and other small animals",
+    "beak_description": "Large, curved grey bill without a prominent casque",
+    "distinctive_features": [
+      "Grey plumage",
+      "Pale bill with dark markings",
+      "Long tail"
+    ],
+    "biodiversity_role": "Important seed disperser in forest ecosystems",
+    "major_threats": [
+      "Forest loss and fragmentation",
+      "Loss of mature fruiting trees"
+    ],
+    "interesting_fact": "The female seals herself inside a tree cavity during nesting, leaving a narrow opening through which the male passes food."
+  },
+  "Oriental_magpie_robin": {
+    "scientific_name": "Copsychus saularis",
+    "iucn_status": "Least Concern",
+    "habitat": "Gardens, villages, woodland edges and plantations",
+    "vegetation": "Tree cover, shrubs and open ground",
+    "western_ghats_distribution": "Widespread across India, including the Western Ghats region",
+    "diet": "Insects and other small invertebrates",
+    "beak_description": "Slim pointed bill",
+    "distinctive_features": [
+      "Black-and-white plumage",
+      "Long tail often raised",
+      "Clear, varied song"
+    ],
+    "biodiversity_role": "Consumes insects and contributes to local food webs",
+    "major_threats": [
+      "Loss of nesting cavities",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "It is well known for its melodious song, especially during the breeding season."
+  },
+  "Pale_billed_flowerpecker": {
+    "scientific_name": "Dicaeum erythrorhynchos",
+    "iucn_status": "Least Concern",
+    "habitat": "Gardens, scrub, woodland and plantations",
+    "vegetation": "Tree and shrub cover with mistletoe and small fruits",
+    "western_ghats_distribution": "Widespread in much of India, including the Western Ghats",
+    "diet": "Small fruits, berries, nectar and occasional tiny insects",
+    "beak_description": "Short, pale, pointed bill",
+    "distinctive_features": [
+      "Very small body",
+      "Plain olive-brown upperparts",
+      "Pale bill"
+    ],
+    "biodiversity_role": "Disperses seeds, including those of mistletoes",
+    "major_threats": [
+      "Loss of tree cover",
+      "Reduction of fruiting plants"
+    ],
+    "interesting_fact": "Flowerpeckers can help spread mistletoe seeds between trees."
+  },
+  "Purple_rumped_sunbird": {
+    "scientific_name": "Leptocoma zeylonica",
+    "iucn_status": "Least Concern",
+    "habitat": "Gardens, scrub, plantations and woodland edges",
+    "vegetation": "Flowering shrubs and trees",
+    "western_ghats_distribution": "Common in peninsular India, including the Western Ghats",
+    "diet": "Nectar and small insects",
+    "beak_description": "Long, slender, curved bill",
+    "distinctive_features": [
+      "Male has iridescent purple and maroon markings",
+      "Small compact body",
+      "Often hovers briefly near flowers"
+    ],
+    "biodiversity_role": "Pollinates flowers and consumes small insects",
+    "major_threats": [
+      "Loss of flowering plants",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "It can visit flowers in gardens and urban spaces as well as natural habitats."
+  },
+  "Red_whiskered_bulbul": {
+    "scientific_name": "Pycnonotus jocosus",
+    "iucn_status": "Least Concern",
+    "habitat": "Gardens, scrub, plantations and forest edges",
+    "vegetation": "Shrubs, fruiting trees and mixed vegetation",
+    "western_ghats_distribution": "Widespread in India, including the Western Ghats",
+    "diet": "Fruits, berries and insects",
+    "beak_description": "Short, slender bill",
+    "distinctive_features": [
+      "Prominent pointed crest",
+      "Red patch behind the eye",
+      "Red undertail area"
+    ],
+    "biodiversity_role": "Disperses seeds and consumes insects",
+    "major_threats": [
+      "Habitat degradation",
+      "Capture and trade in some areas"
+    ],
+    "interesting_fact": "Its crest and red cheek patch make it easy to recognise."
+  },
+  "Rofous_babler": {
+    "scientific_name": "Argya subrufa",
+    "iucn_status": "Least Concern",
+    "habitat": "Evergreen forest edges, dense scrub and undergrowth",
+    "vegetation": "Dense tropical vegetation and forest understorey",
+    "western_ghats_distribution": "The supplied key likely intends Rufous Babbler, a Western Ghats endemic; verify the model's intended label",
+    "diet": "Insects and other small invertebrates",
+    "beak_description": "Short, strong bill",
+    "distinctive_features": [
+      "Rufous-brown plumage",
+      "Long tail",
+      "Often moves in noisy groups"
+    ],
+    "biodiversity_role": "Consumes insects and contributes to forest food webs",
+    "major_threats": [
+      "Forest loss and fragmentation",
+      "Disturbance of undergrowth"
+    ],
+    "interesting_fact": "The Rufous Babbler is associated with the Western Ghats; confirm the spelling and taxon with the model team."
+  },
+  "Rose_ringed_parakeet": {
+    "scientific_name": "Psittacula krameri",
+    "iucn_status": "Least Concern",
+    "habitat": "Woodland, farmland, parks, gardens and towns",
+    "vegetation": "Tree-rich open landscapes and cultivated areas",
+    "western_ghats_distribution": "Widespread across India, including the Western Ghats region",
+    "diet": "Seeds, grains, fruits, buds and flowers",
+    "beak_description": "Strong hooked parrot bill",
+    "distinctive_features": [
+      "Green plumage",
+      "Long pointed tail",
+      "Adult male typically has a neck ring"
+    ],
+    "biodiversity_role": "Disperses some seeds and is part of the food web",
+    "major_threats": [
+      "Loss of nesting trees",
+      "Conflict around crops and trapping"
+    ],
+    "interesting_fact": "It can mimic some sounds and often nests in tree cavities."
+  },
+  "Rufous_treepie": {
+    "scientific_name": "Dendrocitta vagabunda",
+    "iucn_status": "Least Concern",
+    "habitat": "Open woodland, scrub, gardens and agricultural areas",
+    "vegetation": "Trees mixed with open ground and scrub",
+    "western_ghats_distribution": "Widespread in India, including parts of the Western Ghats",
+    "diet": "Fruits, insects, eggs and small animals",
+    "beak_description": "Strong, slightly curved bill",
+    "distinctive_features": [
+      "Rufous body",
+      "Black-and-white wing pattern",
+      "Long graduated tail"
+    ],
+    "biodiversity_role": "Disperses seeds and consumes insects and small animals",
+    "major_threats": [
+      "Loss of tree cover",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "It is an adaptable member of the crow family and often forages in trees."
+  },
+  "Scaly_breasted_munia": {
+    "scientific_name": "Lonchura punctulata",
+    "iucn_status": "Least Concern",
+    "habitat": "Grassland, farmland, scrub and gardens",
+    "vegetation": "Grass and seed-bearing vegetation",
+    "western_ghats_distribution": "Widespread in India, including the Western Ghats region",
+    "diet": "Grass seeds and other small seeds",
+    "beak_description": "Short, stout seed-cracking bill",
+    "distinctive_features": [
+      "Scaly pattern on breast and belly",
+      "Brown upperparts",
+      "Often forms flocks"
+    ],
+    "biodiversity_role": "Feeds on seeds and forms part of the food web",
+    "major_threats": [
+      "Grassland loss",
+      "Pesticide use"
+    ],
+    "interesting_fact": "Its scale-like breast pattern gives the species its common name."
+  },
+  "Shikra": {
+    "scientific_name": "Accipiter badius",
+    "iucn_status": "Least Concern",
+    "habitat": "Woodland, scrub, farmland, parks and gardens",
+    "vegetation": "Tree cover interspersed with open hunting areas",
+    "western_ghats_distribution": "Widespread across India, including the Western Ghats region",
+    "diet": "Small birds, lizards, rodents and large insects",
+    "beak_description": "Short, hooked raptor bill",
+    "distinctive_features": [
+      "Grey upperparts",
+      "Barred underparts",
+      "Long tail with dark bands"
+    ],
+    "biodiversity_role": "Helps regulate populations of small vertebrates",
+    "major_threats": [
+      "Loss of nesting trees",
+      "Pesticide exposure and collisions"
+    ],
+    "interesting_fact": "It often hunts with a sudden dash from a concealed perch."
+  },
+  "Slaty_legged_crake": {
+    "scientific_name": "Rallina eurizonoides",
+    "iucn_status": "Least Concern",
+    "habitat": "Damp forest, shaded streams and dense wet undergrowth",
+    "vegetation": "Moist forest floor and thick waterside vegetation",
+    "western_ghats_distribution": "Patchy distribution in India; verify local occurrence and model label for the Western Ghats",
+    "diet": "Insects, worms, snails and other small invertebrates",
+    "beak_description": "Slender bill suited to probing",
+    "distinctive_features": [
+      "Slaty-grey legs",
+      "Rufous-brown body",
+      "Secretive ground-dwelling behaviour"
+    ],
+    "biodiversity_role": "Feeds on small invertebrates in wet forest habitats",
+    "major_threats": [
+      "Wetland and forest degradation",
+      "Disturbance near streams"
+    ],
+    "interesting_fact": "It is secretive and is more often heard or glimpsed than seen clearly."
+  },
+  "Spotted_dove": {
+    "scientific_name": "Spilopelia chinensis",
+    "iucn_status": "Least Concern",
+    "habitat": "Gardens, scrub, farmland and open woodland",
+    "vegetation": "Open ground with scattered trees and shrubs",
+    "western_ghats_distribution": "Widespread in India, including the Western Ghats region",
+    "diet": "Seeds, grains and some small invertebrates",
+    "beak_description": "Short, slender bill",
+    "distinctive_features": [
+      "Black hindneck patch with white spots",
+      "Pinkish-brown body",
+      "Soft, repetitive cooing call"
+    ],
+    "biodiversity_role": "Disperses some seeds and serves as prey for predators",
+    "major_threats": [
+      "Loss of nesting trees",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "Its spotted black-and-white neck patch is a useful identification feature."
+  },
+  "Stork_billed_kingfisher": {
+    "scientific_name": "Pelargopsis capensis",
+    "iucn_status": "Least Concern",
+    "habitat": "Rivers, ponds, mangroves and wooded wetlands",
+    "vegetation": "Water bodies with trees or perches along the banks",
+    "western_ghats_distribution": "Occurs in suitable wetland habitats in India, including parts of the Western Ghats",
+    "diet": "Fish, crustaceans, frogs and other small animals",
+    "beak_description": "Large, heavy red bill",
+    "distinctive_features": [
+      "Large kingfisher",
+      "Bright red bill and legs",
+      "Blue-green wings and brown head"
+    ],
+    "biodiversity_role": "Predates on aquatic animals and is part of wetland food webs",
+    "major_threats": [
+      "Wetland degradation",
+      "Water pollution"
+    ],
+    "interesting_fact": "It often waits on a waterside perch before diving or swooping at prey."
+  },
+  "Vernel_hanging_parrot": {
+    "scientific_name": "Loriculus vernalis",
+    "iucn_status": "Least Concern",
+    "habitat": "Evergreen forest, woodland, plantations and forest edges",
+    "vegetation": "Tropical forest canopy and fruiting trees",
+    "western_ghats_distribution": "Occurs in parts of the Indian subcontinent including the Western Ghats; key likely means Vernal Hanging Parrot",
+    "diet": "Fruits, berries, buds, nectar and seeds",
+    "beak_description": "Short, strong hooked bill",
+    "distinctive_features": [
+      "Small green parrot",
+      "Red rump",
+      "Often hangs upside down while feeding"
+    ],
+    "biodiversity_role": "Disperses seeds and may pollinate flowers while feeding",
+    "major_threats": [
+      "Forest loss",
+      "Capture for the cage-bird trade"
+    ],
+    "interesting_fact": "Hanging parrots can cling upside down while feeding; verify the model's exact label spelling."
+  },
+  "White_bellied_treepie": {
+    "scientific_name": "Dendrocitta leucogastra",
+    "iucn_status": "Least Concern",
+    "habitat": "Moist evergreen and moist deciduous forest",
+    "vegetation": "Mature tropical forest canopy and edges",
+    "western_ghats_distribution": "Endemic to the Western Ghats of southwestern India",
+    "diet": "Fruits, insects and small animals",
+    "beak_description": "Strong, slightly curved bill",
+    "distinctive_features": [
+      "Black head and throat",
+      "White belly",
+      "Long tail with contrasting pattern"
+    ],
+    "biodiversity_role": "Disperses seeds and consumes insects",
+    "major_threats": [
+      "Forest fragmentation",
+      "Loss of mature forest"
+    ],
+    "interesting_fact": "It is a Western Ghats endemic associated with forest habitats."
+  },
+  "White_breasted_waterhen": {
+    "scientific_name": "Amaurornis phoenicurus",
+    "iucn_status": "Least Concern",
+    "habitat": "Marshes, ponds, paddy fields and wetland edges",
+    "vegetation": "Wet grasses, reeds and aquatic vegetation",
+    "western_ghats_distribution": "Widespread across India, including wetlands in the Western Ghats",
+    "diet": "Insects, worms, snails, seeds and plant matter",
+    "beak_description": "Short, pointed bill",
+    "distinctive_features": [
+      "White face and breast",
+      "Dark slate body",
+      "Red undertail area"
+    ],
+    "biodiversity_role": "Feeds on small invertebrates and contributes to wetland food webs",
+    "major_threats": [
+      "Wetland drainage",
+      "Water pollution"
+    ],
+    "interesting_fact": "It often walks along the margins of ponds and marshes rather than swimming in open water."
+  },
+  "White_browed_bulbul": {
+    "scientific_name": "Pycnonotus luteolus",
+    "iucn_status": "Least Concern",
+    "habitat": "Dry scrub, open woodland, gardens and forest edges",
+    "vegetation": "Scrub, thorny bushes and small trees",
+    "western_ghats_distribution": "Occurs in peninsular India, including suitable parts of the Western Ghats",
+    "diet": "Fruits, berries and insects",
+    "beak_description": "Short, slender bill",
+    "distinctive_features": [
+      "Pale eyebrow stripe",
+      "Olive-brown upperparts",
+      "Yellowish underparts"
+    ],
+    "biodiversity_role": "Disperses seeds and consumes insects",
+    "major_threats": [
+      "Scrub clearance",
+      "Pesticide exposure"
+    ],
+    "interesting_fact": "Its pale eyebrow is a useful field identification mark."
+  },
+  "White_browed_wagtail": {
+    "scientific_name": "Motacilla maderaspatensis",
+    "iucn_status": "Least Concern",
+    "habitat": "Riverbanks, wetlands, open ground, towns and buildings",
+    "vegetation": "Open areas near water or exposed ground",
+    "western_ghats_distribution": "Widespread in India, including the Western Ghats region",
+    "diet": "Insects and other small invertebrates",
+    "beak_description": "Slim, pointed bill",
+    "distinctive_features": [
+      "Black-and-white plumage",
+      "Long tail that constantly wags",
+      "Often forages on the ground"
+    ],
+    "biodiversity_role": "Consumes insects and other invertebrates",
+    "major_threats": [
+      "Water pollution",
+      "Loss of suitable waterside habitat"
+    ],
+    "interesting_fact": "It is the largest wagtail species regularly found in the Indian subcontinent."
+  },
+  "White_cheeked_barbet": {
+    "scientific_name": "Psilopogon viridis",
+    "iucn_status": "Least Concern",
+    "habitat": "Evergreen forest, woodland, plantations and gardens",
+    "vegetation": "Tree-rich tropical vegetation with fruiting trees",
+    "western_ghats_distribution": "Endemic to peninsular India and common in parts of the Western Ghats",
+    "diet": "Fruits, especially figs, and occasional insects",
+    "beak_description": "Stout bill with bristles around the base",
+    "distinctive_features": [
+      "Green plumage",
+      "Pale cheek patch",
+      "Loud repetitive call"
+    ],
+    "biodiversity_role": "Disperses seeds, particularly from fruiting trees",
+    "major_threats": [
+      "Loss of mature trees",
+      "Removal of nesting trees"
+    ],
+    "interesting_fact": "It excavates nest cavities in tree trunks and is often heard before it is seen."
+  },
+  "White_throated_kingfisher": {
+    "scientific_name": "Halcyon smyrnensis",
+    "iucn_status": "Least Concern",
+    "habitat": "Farmland, gardens, wetlands, scrub and open woodland",
+    "vegetation": "Open landscapes with scattered perches and water nearby",
+    "western_ghats_distribution": "Widespread across India, including the Western Ghats region",
+    "diet": "Insects, fish, frogs, lizards and other small animals",
+    "beak_description": "Long, strong, pointed bill",
+    "distinctive_features": [
+      "Bright blue wings and back",
+      "Chestnut head and body",
+      "White throat and breast"
+    ],
+    "biodiversity_role": "Predates on insects and small vertebrates, contributing to food-web balance",
+    "major_threats": [
+      "Pesticide exposure",
+      "Wetland and habitat degradation"
+    ],
+    "interesting_fact": "Despite its name, it often hunts on land as well as near water."
+  }
+}
