@@ -1,3 +1,5 @@
+from model.predictor import predict_species
+import json
 
 from pathlib import Path
 from uuid import uuid4
@@ -5,6 +7,11 @@ from uuid import uuid4
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
+
+BIRDS_DATA_PATH = Path(__file__).resolve().parent / "birds.json"
+
+with open(BIRDS_DATA_PATH, "r", encoding="utf-8") as file:
+    birds_data = json.load(file)
 
 app = FastAPI(title="Birds Canopy Backend")
 
@@ -108,19 +115,27 @@ async def predict(file: UploadFile = File(...)):
         await file.close()
 
     # Temporary response until ML and MongoDB are integrated
-    return {
-        "success": True,
-        "species": None,
-        "confidence": None,
-        "habitat": None,
-        "conservation_status": None,
-        "filename": filename,
-        "message": (
-            "Audio uploaded successfully. "
-            "Model integration pending."
-        )
-    }
+    try:
+        results = predict_species(filepath)
 
+        species = results["species"]
+        bird_info = birds_data.get(species)
+
+        return {
+            "success": True,
+            "species": species,
+            "confidence": results["confidence"],
+            "selected_case": results["selected_case"],
+            "filename": filename,
+            "bird_info": bird_info,
+            "message": "Bird prediction completed successfully."
+        }
+
+    except Exception as error:
+        raise HTTPException(
+        status_code=500,
+        detail=f"Prediction failed: {error}"
+    )
 
 def custom_openapi():
     if app.openapi_schema:
