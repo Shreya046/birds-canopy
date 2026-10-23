@@ -1,21 +1,32 @@
-from model.predictor import predict_species
-import json
 
+import json
+import logging
 from pathlib import Path
 from uuid import uuid4
 
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
+from fastapi.responses import JSONResponse
 
-BIRDS_DATA_PATH = Path(__file__).resolve().parent / "birds.json"
+from model.predictor import predict_species
 
-with open(BIRDS_DATA_PATH, "r", encoding="utf-8") as file:
+# Logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Load bird information once
+BASE_DIR = Path(__file__).resolve().parent
+BIRDS_DATA_PATH = BASE_DIR / "birds.json"
+
+with BIRDS_DATA_PATH.open("r", encoding="utf-8") as file:
     birds_data = json.load(file)
+
+if not isinstance(birds_data, dict):
+    raise ValueError("birds.json must contain a JSON object.")
 
 app = FastAPI(title="Birds Canopy Backend")
 
-# Allow local frontend development servers
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -29,7 +40,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -53,20 +63,23 @@ def health():
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     if not file.filename:
-        raise HTTPException(
+        return JSONResponse(
             status_code=400,
-            detail="No file selected."
+            content={
+                "success": False,
+                "message": "No file selected"
+            },
         )
 
     extension = Path(file.filename).suffix.lower()
 
     if extension not in ALLOWED_FORMATS:
-        raise HTTPException(
+        return JSONResponse(
             status_code=400,
-            detail=(
-                "Unsupported audio format. "
-                "Upload WAV, MP3, OGG, FLAC, M4A, or AAC."
-            )
+            content={
+                "success": False,
+                "message": "Unsupported file format"
+            },
         )
 
     filename = f"{uuid4().hex}{extension}"
@@ -84,43 +97,51 @@ async def predict(file: UploadFile = File(...)):
                 total_size += len(chunk)
 
                 if total_size > MAX_FILE_SIZE:
-                    raise HTTPException(
+                    return JSONResponse(
                         status_code=413,
-                        detail=(
-                            "Audio file is too large. "
-                            "Maximum size is 100 MB."
-                        )
+                        content={
+                            "success": False,
+                            "message": "Audio file exceeds the 100 MB limit"
+                        },
                     )
 
                 output.write(chunk)
 
         if total_size == 0:
-            raise HTTPException(
+            return JSONResponse(
                 status_code=400,
-                detail="The uploaded audio file is empty."
+                content={
+                    "success": False,
+                    "message": "Uploaded file is empty"
+                },
             )
 
-    except HTTPException:
-        filepath.unlink(missing_ok=True)
-        raise
+        # Predict species using the existing model pipeline
+        try:
+            results = predict_species(filepath)
+        except Exception:
+            logger.exception("Bird prediction failed")
+            return JSONResponse(
+                status_code=500,
+                content={
+                    "success": False,
+                    "message": "Prediction failed"
+                },
+            )
 
-    except OSError:
-        filepath.unlink(missing_ok=True)
-        raise HTTPException(
-            status_code=500,
-            detail="Could not save the uploaded audio."
-        )
-
-    finally:
-        await file.close()
-
-    # Temporary response until ML and MongoDB are integrated
-    try:
-        results = predict_species(filepath)
-
-        species = results["species"]
+        species = results.get("species")
         bird_info = birds_data.get(species)
 
+        if not bird_info:
+            return JSONResponse(
+                status_code=404,
+                content={
+                    "success": False,
+                    "message": "Species not found in birds database"
+                },
+            )
+
+        # Return every field available for this bird in birds.json
         return {
             "success": True,
             "species": species,
@@ -131,11 +152,20 @@ async def predict(file: UploadFile = File(...)):
             "message": "Bird prediction completed successfully."
         }
 
-    except Exception as error:
-        raise HTTPException(
-        status_code=500,
-        detail=f"Prediction failed: {error}"
-    )
+    except OSError:
+        logger.exception("Audio file operation failed")
+        return JSONResponse(
+            status_code=500,
+            content={
+                "success": False,
+                "message": "Could not process uploaded audio"
+            },
+        )
+
+    finally:
+        await file.close()
+        filepath.unlink(missing_ok=True)
+
 
 def custom_openapi():
     if app.openapi_schema:
