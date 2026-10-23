@@ -24,10 +24,8 @@ export default function SpeciesPage() {
 
   return  <main className="min-h-screen bg-background"><SiteHeader /><div className="mx-auto max-w-6xl px-5 py-10 lg:px-8 lg:py-16"><div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><div className="overflow-hidden rounded-[2rem] border border-border/60 bg-card shadow-xl shadow-primary/10"><img
   src={
-    birdData?.species === 'Malabar_grey_hornbill'
-      ? '/malabar-grey-hornbill.png'
-      : '/placeholder.jpg'
-  }
+  birdData?.bird_info?.image || '/placeholder.jpg'
+}
   alt={birdData?.species || 'Bird'}
   className="aspect-[4/3] w-full object-cover"
 /></div><div><Badge className="rounded-full">
