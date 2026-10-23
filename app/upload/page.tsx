@@ -18,7 +18,7 @@ export default function Page() {
   const [progress, setProgress] = useState(0)
   const [analyzing, setAnalyzing] = useState(false)
   const [analyzed, setAnalyzed] = useState(false)
-
+  const [result, setResult] = useState<any>(null)
   useEffect(() => {
     if (!isRecording && progress > 0 && progress < 100) {
       const timer = window.setInterval(() => setProgress((value) => Math.min(value + 12, 100)), 180)
@@ -33,13 +33,40 @@ export default function Page() {
     setAnalyzed(false)
   }
 
-  const analyze = () => {
+ const analyze = async () => {
+  if (!file) return
+
+  try {
     setAnalyzing(true)
-    window.setTimeout(() => {
-      setAnalyzing(false)
-      setAnalyzed(true)
-    }, 1300)
+
+    const formData = new FormData()
+    formData.append('file', file)
+
+    const response = await fetch(
+      'http://127.0.0.1:8000/predict',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
+
+    const data = await response.json()
+
+    setResult(data)
+localStorage.setItem(
+  'birdResult',
+  JSON.stringify(data)
+)
+setAnalyzed(true)
+window.location.href = '/species'
+  } catch (error) {
+    console.error('Prediction failed:', error)
+    alert('Prediction failed')
+  } finally {
+    setAnalyzing(false)
   }
+}
+
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
@@ -64,7 +91,39 @@ export default function Page() {
 
           <div className="flex flex-col gap-6">
             <Card className="border-border/70 bg-card/70 shadow-xl shadow-primary/5 backdrop-blur-xl"><CardHeader><CardTitle className="text-xl">Record in the field</CardTitle><CardDescription>Capture a live call from your surroundings</CardDescription></CardHeader><CardContent><Button className={`h-14 w-full rounded-2xl text-base shadow-lg shadow-primary/15 ${isRecording ? 'bg-destructive hover:bg-destructive/90' : ''}`} onClick={() => { setIsRecording(!isRecording); if (!isRecording) { setFile(null); setProgress(0) } }}><Mic data-icon="inline-start" />{isRecording ? 'Stop recording' : 'Record Audio'}</Button>{isRecording && <div className="mt-5 flex items-center justify-center gap-2 text-sm text-destructive"><span className="size-2 animate-pulse rounded-full bg-destructive" />Recording your surroundings</div>}<div className="mt-6 flex items-start gap-3 rounded-2xl bg-muted/70 p-4"><Sparkles className="mt-0.5 size-4 shrink-0 text-primary" /><p className="text-xs leading-5 text-muted-foreground">For the clearest result, keep your phone still and record for at least 10 seconds.</p></div></CardContent></Card>
-            <Card className="border-primary/20 bg-primary/[0.06] shadow-xl shadow-primary/5 backdrop-blur-xl"><CardContent className="p-6"><div className="flex items-center gap-3"><div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground"><Bird /></div><div><p className="text-sm font-medium">Ready for discovery?</p><p className="text-xs text-muted-foreground">Perch 2.0 will compare your call with 3,840 field recordings.</p></div></div><Button className="mt-6 h-12 w-full rounded-2xl" disabled={!file || progress < 100 || analyzing} onClick={analyze}>{analyzing ? 'Analyzing call…' : analyzed ? <><Check data-icon="inline-start" />Analysis complete</> : 'Analyze Bird Call'}</Button>{analyzed && <p className="mt-3 text-center text-xs text-primary">Your observation has been added to the field log.</p>}</CardContent></Card>
+            <Card className="border-primary/20 bg-primary/[0.06] shadow-xl shadow-primary/5 backdrop-blur-xl"><CardContent className="p-6"><div className="flex items-center gap-3"><div className="flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground"><Bird /></div><div><p className="text-sm font-medium">Ready for discovery?</p><p className="text-xs text-muted-foreground">Perch 2.0 will compare your call with 3,840 field recordings.</p></div></div><Button className="mt-6 h-12 w-full rounded-2xl" disabled={!file || progress < 100 || analyzing} onClick={analyze}>{analyzing ? 'Analyzing call…' : analyzed ? <><Check data-icon="inline-start" />Analysis complete</> : 'Analyze Bird Call'}</Button>{analyzed && result && (
+  <div className="mt-4 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-left">
+    
+    <h3 className="font-bold text-lg">
+      {result.species?.replaceAll('_', ' ')}
+    </h3>
+
+    <p className="mt-2">
+      Confidence: {result.confidence}%
+    </p>
+
+    <p>
+      Scientific Name: {result.bird_info?.scientific_name}
+    </p>
+
+    <p>
+      IUCN Status: {result.bird_info?.iucn_status}
+    </p>
+
+    <p>
+      Habitat: {result.bird_info?.habitat}
+    </p>
+    
+    <p>
+  Diet: {result.bird_info?.diet}
+</p>
+
+<p>
+  Interesting Fact:
+  {result.bird_info?.interesting_fact}
+</p>
+  </div>
+)}</CardContent></Card>
           </div>
         </div>
         <p className="mt-8 text-center text-xs text-muted-foreground">Your recordings help map the living soundscape of the Western Ghats.</p>

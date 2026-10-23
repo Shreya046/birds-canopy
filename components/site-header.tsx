@@ -17,7 +17,12 @@ export function SiteHeader() {
           <Link href="/dashboard" className="rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">Dashboard</Link>
           <Link href="/about" className="rounded-xl px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">About</Link>
         </nav>
-        <Button className="rounded-xl" render={<Link href="/upload" />}><Upload data-icon="inline-start" />Identify a call</Button>
+        <Link href="/upload">
+  <Button className="rounded-xl">
+    <Upload data-icon="inline-start" />
+    Identify a call
+  </Button>
+</Link>
       </div>
     </header>
   )
