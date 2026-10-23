@@ -1,5 +1,6 @@
 {
   "Ashy_prinia": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Ashy_prinia.jpg",
     "scientific_name": "Prinia socialis",
     "iucn_status": "Least Concern",
     "habitat": "Scrub, grassland, farmland edges and gardens",
@@ -20,6 +21,7 @@
     "interesting_fact": "It often builds its nest low in grasses or shrubs."
   },
   "Asian_koel": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Asian_koel.jpg",
     "scientific_name": "Eudynamys scolopaceus",
     "iucn_status": "Least Concern",
     "habitat": "Woodland, plantations, gardens and urban tree cover",
@@ -40,6 +42,7 @@
     "interesting_fact": "It is a brood parasite and lays eggs in the nests of other birds, especially crows."
   },
   "Asian_palm_swift": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Asian_palm_swift.jpg",
     "scientific_name": "Cypsiurus balasiensis",
     "iucn_status": "Least Concern",
     "habitat": "Open country, villages, towns and areas with palm trees",
@@ -60,6 +63,7 @@
     "interesting_fact": "It often builds its tiny nest on the underside of a palm frond."
   },
   "Black_drongo": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Black_drongo.jpg",
     "scientific_name": "Dicrurus macrocercus",
     "iucn_status": "Least Concern",
     "habitat": "Open farmland, grassland, scrub and forest edges",
@@ -80,6 +84,7 @@
     "interesting_fact": "It often chases much larger birds away from its territory."
   },
   "Black_hooded_oriole": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Black-hooded_oriole.jpg",
     "scientific_name": "Oriolus xanthornus",
     "iucn_status": "Least Concern",
     "habitat": "Woodland, plantations, gardens and forest edges",
@@ -100,6 +105,7 @@
     "interesting_fact": "Its hanging, cup-shaped nest is suspended from a fork in a tree branch."
   },
   "Black_kite": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Black_kite.jpg",
     "scientific_name": "Milvus migrans",
     "iucn_status": "Least Concern",
     "habitat": "Cities, farmland, wetlands and open woodland",
@@ -120,6 +126,7 @@
     "interesting_fact": "It can use rising warm air to soar while expending little energy."
   },
   "Black_rumped_flameback": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Black_Rumped_Flameback.jpg",
     "scientific_name": "Dinopium benghalense",
     "iucn_status": "Least Concern",
     "habitat": "Woodland, gardens, plantations and open forest",
@@ -140,6 +147,7 @@
     "interesting_fact": "Its stiff tail helps support it while climbing tree trunks."
   },
   "Blue_tailed_bee_eater": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Blue-tailed_bee-eater.jpg",
     "scientific_name": "Merops philippinus",
     "iucn_status": "Least Concern",
     "habitat": "Open country, wetlands, riverbanks and cultivated areas",
@@ -160,6 +168,7 @@
     "interesting_fact": "It can catch flying insects in the air and often removes a stinger before swallowing a bee."
   },
   "Bronzed_drongo": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Bronzed_drongo.jpg",
     "scientific_name": "Dicrurus aeneus",
     "iucn_status": "Least Concern",
     "habitat": "Moist forest, evergreen forest and shaded forest edges",
@@ -180,6 +189,7 @@
     "interesting_fact": "Its dark plumage can show a metallic bronze sheen in good light."
   },
   "Common_kingfisher": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Common_kingfisher.jpg",
     "scientific_name": "Alcedo atthis",
     "iucn_status": "Least Concern",
     "habitat": "Streams, ponds, lakes, canals and other clear waters",
@@ -200,6 +210,7 @@
     "interesting_fact": "It often dives from a perch to catch prey underwater."
   },
   "Common_tailorbird": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Common_tailorbird.jpg",
     "scientific_name": "Orthotomus sutorius",
     "iucn_status": "Least Concern",
     "habitat": "Gardens, scrub, plantations and forest edges",
@@ -220,6 +231,7 @@
     "interesting_fact": "It stitches leaves together with plant fibres or spider silk to form its nest."
   },
   "Greater_coucal": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Greater_coucal.jpg",
     "scientific_name": "Centropus sinensis",
     "iucn_status": "Least Concern",
     "habitat": "Scrub, grassland, wetlands edges, plantations and gardens",
@@ -240,6 +252,7 @@
     "interesting_fact": "Despite its size, it often moves quietly through dense vegetation."
   },
   "Indian_peafowl": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Indian_peafowl.jpg",
     "scientific_name": "Pavo cristatus",
     "iucn_status": "Least Concern",
     "habitat": "Open forest, scrub, farmland and village edges",
@@ -260,6 +273,7 @@
     "interesting_fact": "The male's display train consists of elongated upper-tail coverts, not the true tail feathers."
   },
   "Indian_robin": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Indian_robin.jpg",
     "scientific_name": "Copsychus fulicatus",
     "iucn_status": "Least Concern",
     "habitat": "Dry scrub, rocky ground, open woodland and settlements",
@@ -280,6 +294,7 @@
     "interesting_fact": "It often flicks its tail while searching for prey on the ground."
   },
   "Jerdons_nightjar": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Jerdons_nightjar.jpg",
     "scientific_name": "Caprimulgus atripennis",
     "iucn_status": "Least Concern",
     "habitat": "Open forest, scrub, rocky ground and dry woodland",
@@ -300,6 +315,7 @@
     "interesting_fact": "Its cryptic plumage helps it remain difficult to see while resting on the ground."
   },
   "Jungle_babbler": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Jungle_babbler.jpg",
     "scientific_name": "Argya striata",
     "iucn_status": "Least Concern",
     "habitat": "Scrub, woodland, gardens and agricultural edges",
@@ -320,6 +336,7 @@
     "interesting_fact": "Its social groups have earned it the nickname 'seven sisters' in parts of India."
   },
   "Lotens_sunbird": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Lotens_sunbird.jpg",
     "scientific_name": "Cinnyris lotenius",
     "iucn_status": "Least Concern",
     "habitat": "Gardens, scrub, plantations and forest edges",
@@ -340,6 +357,7 @@
     "interesting_fact": "It is a sunbird of peninsular India and is often seen visiting garden flowers."
   },
   "Malabar_grey_hornbill": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Malabar_grey_hornbill.jpg",
     "scientific_name": "Ocyceros griseus",
     "iucn_status": "Vulnerable",
     "habitat": "Moist evergreen and moist deciduous forests",
@@ -360,6 +378,7 @@
     "interesting_fact": "The female seals herself inside a tree cavity during nesting, leaving a narrow opening through which the male passes food."
   },
   "Oriental_magpie_robin": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Oriental_magpie-robin.jpg",
     "scientific_name": "Copsychus saularis",
     "iucn_status": "Least Concern",
     "habitat": "Gardens, villages, woodland edges and plantations",
@@ -380,6 +399,7 @@
     "interesting_fact": "It is well known for its melodious song, especially during the breeding season."
   },
   "Pale_billed_flowerpecker": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Pale-billed_flowerpecker.jpg",
     "scientific_name": "Dicaeum erythrorhynchos",
     "iucn_status": "Least Concern",
     "habitat": "Gardens, scrub, woodland and plantations",
@@ -400,6 +420,7 @@
     "interesting_fact": "Flowerpeckers can help spread mistletoe seeds between trees."
   },
   "Purple_rumped_sunbird": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Purple-rumped_sunbird.jpg",
     "scientific_name": "Leptocoma zeylonica",
     "iucn_status": "Least Concern",
     "habitat": "Gardens, scrub, plantations and woodland edges",
@@ -420,6 +441,7 @@
     "interesting_fact": "It can visit flowers in gardens and urban spaces as well as natural habitats."
   },
   "Red_whiskered_bulbul": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Red-whiskered_bulbul.jpg",
     "scientific_name": "Pycnonotus jocosus",
     "iucn_status": "Least Concern",
     "habitat": "Gardens, scrub, plantations and forest edges",
@@ -440,6 +462,7 @@
     "interesting_fact": "Its crest and red cheek patch make it easy to recognise."
   },
   "Rofous_babler": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Rufous_babbler.jpg",
     "scientific_name": "Argya subrufa",
     "iucn_status": "Least Concern",
     "habitat": "Evergreen forest edges, dense scrub and undergrowth",
@@ -460,6 +483,7 @@
     "interesting_fact": "The Rufous Babbler is associated with the Western Ghats; confirm the spelling and taxon with the model team."
   },
   "Rose_ringed_parakeet": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Rose-ringed_parakeet.jpg",
     "scientific_name": "Psittacula krameri",
     "iucn_status": "Least Concern",
     "habitat": "Woodland, farmland, parks, gardens and towns",
@@ -480,6 +504,7 @@
     "interesting_fact": "It can mimic some sounds and often nests in tree cavities."
   },
   "Rufous_treepie": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Rufous_treepie.jpg",
     "scientific_name": "Dendrocitta vagabunda",
     "iucn_status": "Least Concern",
     "habitat": "Open woodland, scrub, gardens and agricultural areas",
@@ -500,6 +525,7 @@
     "interesting_fact": "It is an adaptable member of the crow family and often forages in trees."
   },
   "Scaly_breasted_munia": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Scaly-breasted_munia.jpg",
     "scientific_name": "Lonchura punctulata",
     "iucn_status": "Least Concern",
     "habitat": "Grassland, farmland, scrub and gardens",
@@ -520,6 +546,7 @@
     "interesting_fact": "Its scale-like breast pattern gives the species its common name."
   },
   "Shikra": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Shikra.jpg",
     "scientific_name": "Accipiter badius",
     "iucn_status": "Least Concern",
     "habitat": "Woodland, scrub, farmland, parks and gardens",
@@ -540,6 +567,7 @@
     "interesting_fact": "It often hunts with a sudden dash from a concealed perch."
   },
   "Slaty_legged_crake": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Slaty-legged_crake.jpg",
     "scientific_name": "Rallina eurizonoides",
     "iucn_status": "Least Concern",
     "habitat": "Damp forest, shaded streams and dense wet undergrowth",
@@ -560,6 +588,7 @@
     "interesting_fact": "It is secretive and is more often heard or glimpsed than seen clearly."
   },
   "Spotted_dove": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Spotted_dove.jpg",
     "scientific_name": "Spilopelia chinensis",
     "iucn_status": "Least Concern",
     "habitat": "Gardens, scrub, farmland and open woodland",
@@ -580,6 +609,7 @@
     "interesting_fact": "Its spotted black-and-white neck patch is a useful identification feature."
   },
   "Stork_billed_kingfisher": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Stork-billed_kingfisher.jpg",
     "scientific_name": "Pelargopsis capensis",
     "iucn_status": "Least Concern",
     "habitat": "Rivers, ponds, mangroves and wooded wetlands",
@@ -600,6 +630,7 @@
     "interesting_fact": "It often waits on a waterside perch before diving or swooping at prey."
   },
   "Vernel_hanging_parrot": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/Vernal_hanging_parrot.jpg",
     "scientific_name": "Loriculus vernalis",
     "iucn_status": "Least Concern",
     "habitat": "Evergreen forest, woodland, plantations and forest edges",
@@ -620,6 +651,7 @@
     "interesting_fact": "Hanging parrots can cling upside down while feeding; verify the model's exact label spelling."
   },
   "White_bellied_treepie": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/White-bellied_treepie.jpg",
     "scientific_name": "Dendrocitta leucogastra",
     "iucn_status": "Least Concern",
     "habitat": "Moist evergreen and moist deciduous forest",
@@ -640,6 +672,7 @@
     "interesting_fact": "It is a Western Ghats endemic associated with forest habitats."
   },
   "White_breasted_waterhen": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/White-breasted_waterhen.jpg",
     "scientific_name": "Amaurornis phoenicurus",
     "iucn_status": "Least Concern",
     "habitat": "Marshes, ponds, paddy fields and wetland edges",
@@ -660,6 +693,7 @@
     "interesting_fact": "It often walks along the margins of ponds and marshes rather than swimming in open water."
   },
   "White_browed_bulbul": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/White-browed_bulbul.jpg",
     "scientific_name": "Pycnonotus luteolus",
     "iucn_status": "Least Concern",
     "habitat": "Dry scrub, open woodland, gardens and forest edges",
@@ -680,6 +714,7 @@
     "interesting_fact": "Its pale eyebrow is a useful field identification mark."
   },
   "White_browed_wagtail": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/White-browed_wagtail.jpg",
     "scientific_name": "Motacilla maderaspatensis",
     "iucn_status": "Least Concern",
     "habitat": "Riverbanks, wetlands, open ground, towns and buildings",
@@ -700,6 +735,7 @@
     "interesting_fact": "It is the largest wagtail species regularly found in the Indian subcontinent."
   },
   "White_cheeked_barbet": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/White-cheeked_barbet.jpg",
     "scientific_name": "Psilopogon viridis",
     "iucn_status": "Least Concern",
     "habitat": "Evergreen forest, woodland, plantations and gardens",
@@ -720,6 +756,7 @@
     "interesting_fact": "It excavates nest cavities in tree trunks and is often heard before it is seen."
   },
   "White_throated_kingfisher": {
+    "image":"https://en.wikipedia.org/wiki/Special:FilePath/White-throated_kingfisher.jpg",
     "scientific_name": "Halcyon smyrnensis",
     "iucn_status": "Least Concern",
     "habitat": "Farmland, gardens, wetlands, scrub and open woodland",
