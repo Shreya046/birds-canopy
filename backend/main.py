@@ -132,9 +132,10 @@ async def predict(file: UploadFile = File(...)):
         }
 
     except Exception as error:
+        print("PREDICTION ERROR:", error)
         raise HTTPException(
-        status_code=500,
-        detail=f"Prediction failed: {error}"
+            status_code=500,
+            detail=f"Prediction failed: {error}"
     )
 
 def custom_openapi():
