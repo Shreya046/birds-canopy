@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
 import { Footer, SiteHeader } from '@/components/site-header'
+import Image from "next/image"
 
 const distribution = [{ name: 'Canopy', count: 42 }, { name: 'Understory', count: 31 }, { name: 'Wetland', count: 18 }, { name: 'Grassland', count: 9 }]
 const trends = [{ month: 'Jan', observations: 42 }, { month: 'Feb', observations: 58 }, { month: 'Mar', observations: 51 }, { month: 'Apr', observations: 74 }, { month: 'May', observations: 88 }, { month: 'Jun', observations: 96 }]
@@ -30,7 +31,32 @@ export default function DashboardPage() {
   ['IUCN Status', birdData?.bird_info?.iucn_status || '-', AlertTriangle],
   ['Habitat', birdData?.bird_info?.habitat || '-', Leaf],
 ] as const
-  return <main className="min-h-screen bg-background"><SiteHeader /><div className="mx-auto max-w-6xl px-5 py-10 lg:px-8"><div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><Badge variant="secondary" className="rounded-full">Conservation intelligence</Badge><h1 className="mt-4 text-4xl font-semibold tracking-[-0.05em]">Western Ghats field dashboard</h1><p className="mt-2 text-muted-foreground">
+ const birdLocations: Record<
+    string,
+    { left: string; top: string }[]
+  > = {
+    Malabar_Grey_Hornbill: [
+      { left: '40%', top: '20%' },
+      { left: '42%', top: '40%' },
+      { left: '45%', top: '70%' },
+    ],
+
+    Shikra: [
+      { left: '50%', top: '35%' },
+      { left: '52%', top: '55%' },
+    ],
+
+    Ashy_Prinia: [
+      { left: '35%', top: '50%' },
+      { left: '40%', top: '70%' },
+    ],
+
+    Scaly_breasted_Munia: [
+      { left: '48%', top: '60%' },
+      { left: '54%', top: '75%' },
+    ],
+  }
+ return <main className="min-h-screen bg-background"><SiteHeader /><div className="mx-auto max-w-6xl px-5 py-10 lg:px-8"><div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><Badge variant="secondary" className="rounded-full">Conservation intelligence</Badge><h1 className="mt-4 text-4xl font-semibold tracking-[-0.05em]">Western Ghats field dashboard</h1><p className="mt-2 text-muted-foreground">
   Latest identified species:
   {' '}
   {birdData?.species?.replaceAll('_', ' ') || 'No prediction yet'}
@@ -43,7 +69,7 @@ export default function DashboardPage() {
   <img
   src={birdData?.bird_info?.image}
   alt={birdData?.species}
-  className="mt-3 h-40 w-full rounded-lg object-cover"
+  className="mt-3 w-full rounded-lg object-contain"
 />
     <p className="mt-2">
       Species: {birdData?.species?.replaceAll('_', ' ')}
@@ -86,5 +112,52 @@ export default function DashboardPage() {
 )}
 </div><p className="text-sm text-muted-foreground">
   Last prediction: {birdData?.species?.replaceAll('_', ' ') || 'No prediction'}
-</p></div><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{stats.map(([label, value, Icon]) => <Card key={label} className="border-border/60 bg-card/60"><CardContent className="p-5"><Icon className="size-5 text-primary" /><p className="mt-5 text-2xl font-semibold tracking-tight">{value}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{label}</p></CardContent></Card>)}</div><div className="mt-6 grid gap-6 lg:grid-cols-2"><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Species distribution</CardTitle></CardHeader><CardContent><ChartContainer config={chartConfig} className="h-[250px] w-full"><BarChart accessibilityLayer data={distribution}><CartesianGrid vertical={false} /><XAxis dataKey="name" tickLine={false} axisLine={false} tickMargin={8} /><YAxis tickLine={false} axisLine={false} /><ChartTooltip content={<ChartTooltipContent />} /><Bar dataKey="count" fill="var(--color-count)" radius={8} /></BarChart></ChartContainer></CardContent></Card><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Conservation status breakdown</CardTitle></CardHeader><CardContent><ChartContainer config={chartConfig} className="mx-auto h-[250px] w-full"><PieChart><ChartTooltip content={<ChartTooltipContent hideLabel />} /><Pie data={status} dataKey="value" nameKey="name" innerRadius={65} outerRadius={95} /></PieChart></ChartContainer></CardContent></Card><Card className="border-border/60 bg-card/60 lg:col-span-2"><CardHeader><CardTitle>Observation trends</CardTitle></CardHeader><CardContent><ChartContainer config={chartConfig} className="h-[250px] w-full"><LineChart accessibilityLayer data={trends} margin={{ left: 4, right: 10 }}><CartesianGrid vertical={false} /><XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} /><YAxis tickLine={false} axisLine={false} /><ChartTooltip content={<ChartTooltipContent />} /><Line type="monotone" dataKey="observations" stroke="var(--color-observations)" strokeWidth={3} dot={false} /></LineChart></ChartContainer></CardContent></Card></div><section className="mt-10"><div className="flex items-center gap-3"><TrendingUp className="size-5 text-primary" /><h2 className="text-2xl font-semibold tracking-tight">Biodiversity insights</h2></div><div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[['Critically Endangered', '6 species', 'Immediate monitoring'], ['Endangered', '13 species', 'Habitat pressure'], ['Vulnerable', '45 species', 'Track population change'], ['Least Concern', '114 species', 'Stable indicators']].map(([title, value, note]) => <Card key={title} className="border-border/60 bg-card/60"><CardContent className="p-5"><p className="text-sm font-medium">{title}</p><p className="mt-3 text-2xl font-semibold">{value}</p><p className="mt-1 text-xs text-muted-foreground">{note}</p></CardContent></Card>)}</div></section></div><Footer /></main>
+</p></div><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{stats.map(([label, value, Icon]) => <Card key={label} className="border-border/60 bg-card/60"><CardContent className="p-5"><Icon className="size-5 text-primary" /><p className="mt-5 text-2xl font-semibold tracking-tight">{value}</p><p className="mt-1 text-xs leading-5 text-muted-foreground">{label}</p></CardContent></Card>)}</div><div className="mt-6 grid gap-6 lg:grid-cols-2"><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Species distribution</CardTitle></CardHeader><CardContent><ChartContainer config={chartConfig} className="h-[250px] w-full"><BarChart accessibilityLayer data={distribution}><CartesianGrid vertical={false} /><XAxis dataKey="name" tickLine={false} axisLine={false} tickMargin={8} /><YAxis tickLine={false} axisLine={false} /><ChartTooltip content={<ChartTooltipContent />} /><Bar dataKey="count" fill="var(--color-count)" radius={8} /></BarChart></ChartContainer></CardContent></Card><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Conservation status breakdown</CardTitle></CardHeader><CardContent><ChartContainer config={chartConfig} className="mx-auto h-[250px] w-full"><PieChart><ChartTooltip content={<ChartTooltipContent hideLabel />} /><Pie data={status} dataKey="value" nameKey="name" innerRadius={65} outerRadius={95} /></PieChart></ChartContainer></CardContent></Card><Card className="border-border/60 bg-card/60 lg:col-span-2"><CardHeader><CardTitle>Observation trends</CardTitle></CardHeader><CardContent><ChartContainer config={chartConfig} className="h-[250px] w-full"><LineChart accessibilityLayer data={trends} margin={{ left: 4, right: 10 }}><CartesianGrid vertical={false} /><XAxis dataKey="month" tickLine={false} axisLine={false} tickMargin={8} /><YAxis tickLine={false} axisLine={false} /><ChartTooltip content={<ChartTooltipContent />} /><Line type="monotone" dataKey="observations" stroke="var(--color-observations)" strokeWidth={3} dot={false} /></LineChart></ChartContainer></CardContent></Card></div>
+<Card className="mt-8 border-border/60 bg-card/60">
+  <CardHeader>
+    <CardTitle>Western Ghats Distribution</CardTitle>
+  </CardHeader>
+
+  <CardContent>
+    <div className="relative">
+  <Image
+    src="/western-ghats-map.png"
+    alt="Western Ghats Map"
+    width={800}
+    height={500}
+    className="w-full rounded-xl"
+  />
+  {birdLocations[birdData?.species]?.map((point, index) => (
+  <div
+    key={index}
+    className="absolute h-4 w-4 rounded-full bg-green-500 border-2 border-white shadow-lg"
+    style={{
+      left: point.left,
+      top: point.top,
+    }}
+  />
+))}
+
+  <div className="absolute left-[42%] top-[72%] h-4 w-4 rounded-full bg-green-500 border-2 border-white shadow-lg" />
+  <div className="absolute left-[40%] top-[58%] h-4 w-4 rounded-full bg-green-500 border-2 border-white shadow-lg" />
+  <div className="absolute left-[36%] top-[38%] h-4 w-4 rounded-full bg-green-500 border-2 border-white shadow-lg" />
+</div>
+    <div className="mt-4 space-y-2">
+      <p>
+        <strong>Species:</strong>{" "}
+        {birdData?.species?.replaceAll('_', ' ') || 'Unknown'}
+      </p>
+
+      <p>
+        <strong>Range:</strong>{" "}
+        {birdData?.bird_info?.local_range || 'Western Ghats'}
+      </p>
+
+      <p>
+        <strong>IUCN Status:</strong>{" "}
+        {birdData?.bird_info?.iucn_status || 'Not Available'}
+      </p>
+    </div>
+  </CardContent>
+</Card><section className="mt-10"><div className="flex items-center gap-3"><TrendingUp className="size-5 text-primary" /><h2 className="text-2xl font-semibold tracking-tight">Biodiversity insights</h2></div><div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[['Critically Endangered', '6 species', 'Immediate monitoring'], ['Endangered', '13 species', 'Habitat pressure'], ['Vulnerable', '45 species', 'Track population change'], ['Least Concern', '114 species', 'Stable indicators']].map(([title, value, note]) => <Card key={title} className="border-border/60 bg-card/60"><CardContent className="p-5"><p className="text-sm font-medium">{title}</p><p className="mt-3 text-2xl font-semibold">{value}</p><p className="mt-1 text-xs text-muted-foreground">{note}</p></CardContent></Card>)}</div></section></div><Footer /></main>
 }

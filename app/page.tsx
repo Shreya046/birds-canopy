@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer } from '@/components/ui/chart'
 import { Progress } from '@/components/ui/progress'
+import Link from 'next/link'
 
 const predictions = [
   { name: 'Malabar Grey Hornbill', scientific: 'Ocyceros griseus', score: 94, tone: 'bg-primary' },
@@ -33,14 +34,24 @@ export default function Page() {
             <div className="flex size-10 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/20"><Bird /></div>
             <div><p className="text-lg font-semibold tracking-tight">Birds Canopy</p><p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Western Ghats field lab</p></div>
           </div>
-          <div className="hidden items-center gap-8 text-sm text-muted-foreground md:flex"><span className="text-foreground">Observations</span><span>Species library</span><span>Conservation map</span></div>
-          <Button variant="outline" size="sm" className="rounded-full bg-background/50"><Sparkles data-icon="inline-start" /> New analysis</Button>
+          <div className="hidden items-center gap-8 text-sm text-muted-foreground md:flex"><Link href="/dashboard"><span className="text-foreground">Observations</span></Link><Link href="/species"><span className="text-foreground">Species library</span></Link><Link href="/dashboard"><span className="text-foreground">Conservation map</span></Link></div>
+          
+          <Link href="/upload">
+  <Button>
+    New Analysis
+  </Button>
+</Link>
         </div>
       </header>
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-5 py-8 lg:px-10 lg:py-12">
         <div className="mb-8 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div><div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground"><span className="size-2 rounded-full bg-chart-1" /> Observation / 24 Oct 2024</div><h1 className="max-w-xl text-3xl font-semibold tracking-[-0.04em] md:text-5xl">A voice from the canopy.</h1><p className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground">Perch 2.0 has identified a likely species from your field recording in Silent Valley National Park.</p></div>
+          <Link href="/upload">
+  <button className="mt-10 rounded-xl bg-primary px-6 py-3 text-black font-medium hover:opacity-40">
+    Identify a Bird Call
+  </button>
+</Link>
           <div className="flex items-center gap-2 rounded-full border border-border/70 bg-card/60 px-4 py-2 text-xs text-muted-foreground shadow-sm backdrop-blur-md"><ShieldCheck className="text-primary" /> Analysis verified <span className="text-border">/</span> <span className="font-medium text-foreground">PC-2.0.1</span></div>
         </div>
 

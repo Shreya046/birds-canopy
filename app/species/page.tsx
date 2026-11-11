@@ -24,11 +24,9 @@ export default function SpeciesPage() {
   }, [])
 
   return  <main className="min-h-screen bg-background"><SiteHeader /><div className="mx-auto max-w-6xl px-5 py-10 lg:px-8 lg:py-16"><div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"><div className="overflow-hidden rounded-[2rem] border border-border/60 bg-card shadow-xl shadow-primary/10"><img
-  src={
-  birdData?.bird_info?.image || '/placeholder.jpg'
-}
-  alt={birdData?.species || 'Bird'}
-  className="aspect-[4/3] w-full object-cover"
+  src={birdData?.bird_info?.image}
+  alt={birdData?.species}
+  className="mt-3 w-full rounded-lg object-contain"
 /></div><div><Badge className="rounded-full">
   {birdData?.bird_info?.iucn_status || 'Bird Species'}
 </Badge><h1 className="mt-5 text-5xl font-semibold tracking-[-0.06em]">
@@ -37,18 +35,83 @@ export default function SpeciesPage() {
   {birdData?.bird_info?.scientific_name || 'Ocyceros griseus'}
 </p><p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">
   Habitat: {birdData?.bird_info?.habitat || 'Habitat information unavailable'}
-</p><Button className="mt-7 rounded-xl"><Play data-icon="inline-start" />Play field recording</Button>
+</p>
 <a
   href="/dashboard"
   className="mt-4 inline-block rounded-xl border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-medium"
 >
   View Dashboard →
 </a>
-</div></div><div className="mt-16 grid gap-6 lg:grid-cols-2"><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Taxonomy</CardTitle></CardHeader><CardContent className="grid gap-4 text-sm"><p className="flex justify-between border-b border-border/60 pb-3"><span className="text-muted-foreground">Family</span><span>Bucerotidae</span></p><p className="flex justify-between border-b border-border/60 pb-3"><span className="text-muted-foreground">Order</span><span>Bucerotiformes</span></p><p className="flex justify-between"><span className="text-muted-foreground">Local range</span><span>Western Ghats</span></p></CardContent></Card><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Distinctive features</CardTitle></CardHeader><CardContent className="grid gap-3 text-sm">{features.map((feature: string) => <p key={feature} className="flex items-center gap-3"><CheckCircle2 className="size-4 text-primary" />{feature}</p>)}</CardContent></Card></div><div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.1fr]"><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Habitat profile</CardTitle></CardHeader><CardContent className="grid gap-4 sm:grid-cols-2">{habitat.map(([label, value]) => <div key={label} className="rounded-2xl bg-muted/60 p-4"><p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p><p className="mt-2 text-sm font-medium">
+</div></div><div className="mt-16 grid gap-6 lg:grid-cols-2"><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Taxonomy</CardTitle></CardHeader><CardContent className="grid gap-4 text-sm">
+
+  <p className="flex justify-between border-b border-border/60 pb-3">
+    <span className="text-muted-foreground">
+      Scientific Name
+    </span>
+    <span>
+      {birdData?.bird_info?.scientific_name}
+    </span>
+  </p>
+
+  <p className="flex justify-between border-b border-border/60 pb-3">
+    <span className="text-muted-foreground">
+      Distribution
+    </span>
+    <span>
+      {birdData?.bird_info?.western_ghats_distribution}
+    </span>
+  </p>
+
+  <p className="flex justify-between">
+    <span className="text-muted-foreground">
+      Diet
+    </span>
+    <span>
+      {birdData?.bird_info?.diet}
+    </span>
+  </p>
+
+</CardContent>
+</Card><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Distinctive features</CardTitle></CardHeader><CardContent className="grid gap-3 text-sm">{features.map((feature: string) => <p key={feature} className="flex items-center gap-3"><CheckCircle2 className="size-4 text-primary" />{feature}</p>)}</CardContent></Card></div><div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.1fr]"><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Habitat profile</CardTitle></CardHeader><CardContent className="grid gap-4 sm:grid-cols-2">{habitat.map(([label, value]) => <div key={label} className="rounded-2xl bg-muted/60 p-4"><p className="text-xs uppercase tracking-wider text-muted-foreground">{label}</p><p className="mt-2 text-sm font-medium">
   {label === 'Vegetation'
     ? birdData?.bird_info?.habitat || value
     : value}
-</p></div>)}</CardContent></Card><Card className="border-border/60 bg-card/60"><CardHeader><CardTitle>Western Ghats distribution</CardTitle></CardHeader><CardContent><div className="flex min-h-48 items-center justify-center rounded-2xl border border-dashed border-primary/30 bg-primary/[0.05]"><div className="text-center"><MapPin className="mx-auto size-8 text-primary" /><p className="mt-3 text-sm font-medium">Distribution map</p><p className="mt-1 text-xs text-muted-foreground">{birdData?.bird_info?.western_ghats_distribution || 'Distribution information unavailable'}</p></div></div></CardContent></Card></div><div className="mt-6 grid gap-6 lg:grid-cols-2"><Card className="border-primary/20 bg-primary/[0.06]"><CardHeader><CardTitle className="flex items-center gap-2"><ShieldCheck className="size-5 text-primary" />Conservation snapshot</CardTitle></CardHeader><CardContent className="grid gap-4 sm:grid-cols-3"><div><p className="text-xs text-muted-foreground">IUCN status</p><p className="mt-1 font-medium">
+</p></div>)}</CardContent></Card><Card className="border-border/60 bg-card/60">
+  <CardHeader>
+    <CardTitle>Western Ghats Distribution</CardTitle>
+  </CardHeader>
+
+  <CardContent>
+    <div className="relative">
+      <img
+        src="/western-ghats-map.png"
+        alt="Western Ghats Map"
+        className="w-full rounded-xl"
+      />
+
+      <div className="absolute left-[40%] top-[20%] h-4 w-4 rounded-full bg-green-500 border-2 border-white shadow-lg" />
+      <div className="absolute left-[42%] top-[45%] h-4 w-4 rounded-full bg-green-500 border-2 border-white shadow-lg" />
+      <div className="absolute left-[45%] top-[72%] h-4 w-4 rounded-full bg-green-500 border-2 border-white shadow-lg" />
+    </div>
+
+    <div className="mt-4">
+      <p>
+        <strong>Species:</strong>{' '}
+        {birdData?.species?.replaceAll('_', ' ') || 'Unknown'}
+      </p>
+
+      <p>
+        <strong>Range:</strong>{' '}
+        {birdData?.bird_info?.local_range || 'Western Ghats'}
+      </p>
+
+      <p>
+        <strong>IUCN Status:</strong>{' '}
+        {birdData?.bird_info?.iucn_status || 'Not Available'}
+      </p>
+    </div>
+  </CardContent>
+</Card></div><div className="mt-6 grid gap-6 lg:grid-cols-2"><Card className="border-primary/20 bg-primary/[0.06]"><CardHeader><CardTitle className="flex items-center gap-2"><ShieldCheck className="size-5 text-primary" />Conservation snapshot</CardTitle></CardHeader><CardContent className="grid gap-4 sm:grid-cols-3"><div><p className="text-xs text-muted-foreground">IUCN status</p><p className="mt-1 font-medium">
   {birdData?.bird_info?.iucn_status || 'Least Concern'}
 </p></div><div><p className="mt-1 font-medium text-primary">
   {birdData?.bird_info?.diet || 'Not Available'}

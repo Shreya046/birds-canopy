@@ -34,7 +34,7 @@ UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 ALLOWED_FORMATS = {
-    ".wav", ".mp3", ".ogg", ".flac", ".m4a", ".aac"
+    ".wav",".webm", ".mp3", ".ogg", ".flac", ".m4a", ".aac"
 }
 
 MAX_FILE_SIZE = 100 * 1024 * 1024  # 100 MB
