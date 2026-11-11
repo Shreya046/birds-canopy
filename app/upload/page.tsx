@@ -42,7 +42,7 @@ export default function Page() {
     formData.append('file', file)
 
     const response = await fetch(
-      'https://birds-canopy-production.up.railway.app/predict',
+      'https://Shreya046/birds-canopy-backend/predict',
       {
         method: 'POST',
         body: formData,
