@@ -1,66 +1,20 @@
-from model.predictor import predict_species
 import json
-
+import os
 from pathlib import Path
 from uuid import uuid4
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI, UploadFile, File
-import os
+from model.predictor import predict_species
 
-app = FastAPI()
-
-# Keep model variable global but start it as None
-model = None
-
-def get_perch_model():
-    global model
-    if model is None:
-        print("Lazy-loading Google Perch 2.0...")
-        # Put your actual model loading code here e.g.:
-        # import tensorflow_hub as hub
-        # model = hub.load("https://tfhub.dev/google/perch/...")
-    return model
-
-@app.post("/predict")
-async def predict(file: UploadFile = File(...)):
-    # Load model only when prediction is requested
-    perch_model = get_perch_model()
-    
-    # Your audio processing and prediction logic here...
-    return {"species": "Example Bird"}
-
-app = FastAPI()
-
-# Add CORS middleware to allow requests from your Vercel frontend
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Or specify your exact Vercel URL
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-BIRDS_DATA_PATH = Path(__file__).resolve().parent / "birds.json"
-
-with open(BIRDS_DATA_PATH, "r", encoding="utf-8") as file:
-    birds_data = json.load(file)
-
+# Initialize FastAPI app once
 app = FastAPI(title="Birds Canopy Backend")
 
-# Allow local frontend development servers
+# Allow requests from Vercel frontend and local development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=["*"],  # Allows all origins (Vercel, localhost, etc.)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -70,8 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
+BIRDS_DATA_PATH = BASE_DIR / "birds.json"
+
+try:
+    with open(BIRDS_DATA_PATH, "r", encoding="utf-8") as file:
+        birds_data = json.load(file)
+except Exception:
+    birds_data = {}
+
 ALLOWED_FORMATS = {
-    ".wav",".webm", ".mp3", ".ogg", ".flac", ".m4a", ".aac"
+    ".wav", ".webm", ".mp3", ".ogg", ".flac", ".m4a", ".aac"
 }
 
 MAX_FILE_SIZE = 100 * 1024 * 1024  # 100 MB
@@ -151,12 +113,15 @@ async def predict(file: UploadFile = File(...)):
     finally:
         await file.close()
 
-    # Temporary response until ML and MongoDB are integrated
+    # Run ML prediction using Perch model
     try:
         results = predict_species(filepath)
 
         species = results["species"]
         bird_info = birds_data.get(species)
+
+        # Clean up temporary uploaded audio file after prediction
+        filepath.unlink(missing_ok=True)
 
         return {
             "success": True,
@@ -169,11 +134,13 @@ async def predict(file: UploadFile = File(...)):
         }
 
     except Exception as error:
+        filepath.unlink(missing_ok=True)
         print("PREDICTION ERROR:", error)
         raise HTTPException(
             status_code=500,
             detail=f"Prediction failed: {error}"
-    )
+        )
+
 
 def custom_openapi():
     if app.openapi_schema:
