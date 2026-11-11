@@ -7,6 +7,43 @@ from uuid import uuid4
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, UploadFile, File
+import os
+
+app = FastAPI()
+
+# Keep model variable global but start it as None
+model = None
+
+def get_perch_model():
+    global model
+    if model is None:
+        print("Lazy-loading Google Perch 2.0...")
+        # Put your actual model loading code here e.g.:
+        # import tensorflow_hub as hub
+        # model = hub.load("https://tfhub.dev/google/perch/...")
+    return model
+
+@app.post("/predict")
+async def predict(file: UploadFile = File(...)):
+    # Load model only when prediction is requested
+    perch_model = get_perch_model()
+    
+    # Your audio processing and prediction logic here...
+    return {"species": "Example Bird"}
+
+app = FastAPI()
+
+# Add CORS middleware to allow requests from your Vercel frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify your exact Vercel URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 BIRDS_DATA_PATH = Path(__file__).resolve().parent / "birds.json"
 
