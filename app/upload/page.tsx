@@ -42,12 +42,12 @@ export default function Page() {
     formData.append('file', file)
 
     const response = await fetch(
-      'https://Shreya046/birds-canopy-backend/predict',
-      {
-        method: 'POST',
-        body: formData,
-      }
-    )
+  "http://127.0.0.1:8000/predict",
+  {
+    method: "POST",
+    body: formData,
+  }
+);
 
     const data = await response.json()
 

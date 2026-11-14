@@ -14,3 +14,8 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .DS_Store
+birds-canopy-backend/
+.next/
+node_modules/
+backend/uploads/
+backend/__pycache__/
